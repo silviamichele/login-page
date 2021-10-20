@@ -10,9 +10,7 @@ var usuarios = {
 };
 
 function verificarCampos(opcao = "register") {
-    alert("entrou");
     if (opcao == "login") {
-        alert("login")
         let username = document.getElementById("username").value;
         let pass = document.getElementById("password").value;
         if (username.trim() == "") {
@@ -36,7 +34,7 @@ function verificarCampos(opcao = "register") {
         } else if (lastName.trim() == "") {
             alert("O campo last name está vázio");
         } else {
-            register(firstName, lastName, usernameRegister, passwordRegister);
+            register(usernameRegister, passwordRegister, firstName, lastName);
         }
     }
 }
@@ -52,7 +50,10 @@ function login(username, pass) {
 }
 
 function register(usernameRegister, passwordRegister, firstName, lastName) {
-    if (usuarios[username] == undefined) {
+    // console.log(usernameRegister)
+    // console.log(usuarios[usernameRegister]);
+    // console.log(usuarios);
+    if (usuarios[usernameRegister] === undefined) {
         usuarios[usernameRegister] = {
             "password": passwordRegister,
             "fistName": firstName,
