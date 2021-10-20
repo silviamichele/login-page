@@ -21,9 +21,9 @@
                 <form>
                     <h1 class="bem-vindo">Bem-vindo!</h1>
                     <input type="text" placeholder="Username..." class="form-input" id="username">
-                    <input type="text" placeholder="Password..." class="form-input" id="password">
+                    <input type="password" placeholder="Password..." class="form-input" id="password">
                     <br>
-                    <a href="#" onclick="login()">
+                    <a href="#" onclick="verificarCampos('login')">
                         <p class="btn-ancora">Login</p>
                     </a>
                 </form>
@@ -38,11 +38,11 @@
             <div class="center">
                 <form>
                     <h1 class="bem-vindo">Cadastre-se</h1>
-                    <input type="text" placeholder="First name..." class="form-input">
-                    <input type="text" placeholder="Last name..." class="form-input">
-                    <input type="text" placeholder="Username..." class="form-input">
-                    <input type="password" placeholder="Password..." class="form-input">
-                    <a href="#" onclick="login()">
+                    <input type="text" placeholder="First name..." class="form-input" id="first-name">
+                    <input type="text" placeholder="Last name..." class="form-input" id="last-name">
+                    <input type="text" placeholder="Username..." class="form-input" id="username-register">
+                    <input type="password" placeholder="Password..." class="form-input" id="password-register">
+                    <a href="#" onclick="verificarCampos()">
                         <p class="btn-ancora">Register</p>
                     </a>
                 </form>
@@ -52,30 +52,7 @@
             </div>
         </div>
     </div>
-    <script>
-        var usuarios = {
-            "aliexpress": {
-                "nome": "ali",
-                "password": "9090123"
-            },
-            "sil12": {
-                "nome": "silvia",
-                "password": "9090polo"
-            }
-        };
-
-        function login() {
-            var username = document.getElementById("username").value;
-            var pass = document.getElementById("password").value;
-            let usernameCheck = usuarios[username];
-            alert(usernameCheck);
-            if (usernameCheck == undefined) {
-                alert("usuário inexistente");
-            } else {
-                alert("bem-vindo!");
-            }
-        }
-    </script>
+    <script src="usuarios.js"></script>
 </body>
 
 </html>
